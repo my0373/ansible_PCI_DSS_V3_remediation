@@ -5,12 +5,18 @@
 - hosts:  foreman_hostgroup_rhel7
   remote_user: ansible
   gather_facts: no
+  become: yes
+  become_user: root
+  become_method: sudo
+
 
   tasks:
 
   ## Ping all the effected servers. This is usefule for checking
   ## the scope of the machines it will be run against.
-    - name: Create the Ansible group
-      ping:
+    - name: Update the openscap client
+      yum:
+        name: 'rubygem-foreman_scap_client'
+        state: latest
 
 
