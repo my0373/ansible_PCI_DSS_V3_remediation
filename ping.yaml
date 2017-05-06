@@ -1,0 +1,13 @@
+---
+- hosts:  all
+  remote_user: root
+  gather_facts: no
+
+  tasks:
+
+  ## Ping all the effected servers. This is usefule for checking
+  ## the scope of the machines it will be run against.
+    - name: Create the Ansible group
+      ping:
+
+
