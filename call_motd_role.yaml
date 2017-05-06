@@ -1,0 +1,7 @@
+---
+- name: Setup MOTD
+    roles:
+       - { role: motd }
+
+
+
