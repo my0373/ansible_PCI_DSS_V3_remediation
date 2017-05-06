@@ -4,3 +4,6 @@
   ## the scope of the machines it will be run against.
 - name: MOTD
   template: src=motd.j2 dest=⁄etc⁄motd owner=root mode=0644
+
+- debug:
+    msg: "System {{ inventory_hostname }} has run motd::main.yml"
