@@ -1,5 +1,5 @@
 ---
-- hosts:  all
+- hosts:  foreman_hostgroup_rhel7
   remote_user: root
   gather_facts: no
 
