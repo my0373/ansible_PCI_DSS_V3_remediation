@@ -8,14 +8,8 @@
   become: yes
   become_user: root
   become_method: sudo
-
-
----
-- name: Setup Host Baseline
-  hosts: foreman_hostgroup_rhel7
   roles:
     - { role: motd }
 
-  tasks:
 
 
