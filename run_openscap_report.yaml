@@ -15,7 +15,7 @@
   ## Ping all the effected servers. This is usefule for checking
   ## the scope of the machines it will be run against.
     - name: Run OpenSCAP report
-      command:
-        name: /usr/bin/foreman_scap_client 1
+      command: /usr/bin/foreman_scap_client 1
+
 
 
