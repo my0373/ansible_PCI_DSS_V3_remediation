@@ -31,7 +31,19 @@
         ## Yes, it's an embedded key. It's not in use in any real systems anywhere.
         key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCytCeOZtwKbmsz+VU1yTlUPPwunVpXPE/9CKpiUVB7aPnurh8AtZoY7DCAuTMI2MhFbqlFgAHB00jhJ///uZW7D4S/7KBmLJBltr61jrVkcakZti3nz+g3R2F4ux6DeNMiTAInpLp5YwXEeBhArkULvZLPcmakOS3LQpL47xsAoiwkXRjr+19enck+ooniLPtJLC4u7bjqZQ47j7+6P6dEIJRg3yZ4RcNVjrEMm7qNTsDqNbk7d6qsA1stHl+5v+B+mCz3hY6HVlALUuhPzKTahXdlUhmo40B0H5PkU0fnbvQjdTiQt7+VogLHinXIFau4tMjx/n3AS29LKtie5XSP"
 
+    - name: Allow 'wheel' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        validate: visudo -cf %s
 
+    - name: Add sudoers users to wheel group
+      user:
+        name: "ansible"
+        groups: wheel
+        append: yes
 
 
 
