@@ -1,0 +1,10 @@
+---
+# Setup the Message of the day
+  - name: setup a MOTD
+    template:
+      src: motdtemplate.j2
+      dest: /etc/motd
+      owner: root
+      group: wheel
+      mode: 0644
+    become: True
