@@ -5,7 +5,9 @@
 # Unfortunately, this particular OpenSCAP check looks for a specific line in /etc/crontab.
 # Profile needs to be fixed. Will be raising a ticket.
   - name: Install the AIDE crontab entry
-#    cron:
+    script: echo '05 4 * * * root /usr/sbin/aide --check' >> /etc/crontab
+    become: yes
+    #    cron:
 #      name: yum autoupdate
 #      weekday: 2
 #      minute: 0
@@ -13,7 +15,5 @@
 #      user: root
 #      job: "/usr/sbin/aide --check"
 #      cron_file: ansible_aide_check
-      script: echo '05 4 * * * root /usr/sbin/aide --check' >> /etc/crontab
-    become: yes
 
 
