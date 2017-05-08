@@ -37,3 +37,16 @@
   - name: Execute the set libuser hashing alogrithm script
     command: /tmp/set_libusr_hash.sh
     become: yes
+
+  - name: Set smartcard logins
+    template:
+      src: set_card_logins.sh.j2
+      dest: /tmp/set_card_logins.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the set smartcard login script
+    command: /tmp/set_card_logins.sh
+    become: yes
