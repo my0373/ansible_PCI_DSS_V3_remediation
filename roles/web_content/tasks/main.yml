@@ -1,0 +1,10 @@
+---
+  - name: Copy HTML content
+    copy:
+      src: site/
+      dest: /var/www/html
+      owner: root
+      group: root
+      mode: "u=rwx,g=rx,o=rx"
+    become: yes
+
