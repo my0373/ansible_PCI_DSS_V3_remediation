@@ -1,5 +1,5 @@
 ---
-# Setup the Message of the day
+# Install the AIDE rpm
   - name: Install the AIDE package
     yum:
       name: 'aide'

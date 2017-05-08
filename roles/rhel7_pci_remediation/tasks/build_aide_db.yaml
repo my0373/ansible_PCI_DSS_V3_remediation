@@ -1,0 +1,17 @@
+---
+# Build the AIDE database
+## TODO: Hack for demo purposes. This regenerates the db each and evey time.
+## I'll come back and fix this in the next proper commit.
+  - name: Install the AIDE package
+    command: /usr/sbin/aide --init
+    become: True
+
+
+- cron:
+    name: yum autoupdate
+    weekday: 2
+    minute: 0
+    hour: 12
+    user: root
+    job: "YUMINTERACTIVE: 0 /usr/sbin/yum-autoupdate"
+    cron_file: ansible_yum-autoupdate

@@ -1,0 +1,12 @@
+---
+# Installs a crontab AIDE check. This way we create a nice entry in /etc/cron.d
+# it's personal preference, but I think this is a cleaner way of doing cron.
+  - name: Install the AIDE crontab entry
+    cron:
+      name: yum autoupdate
+      weekday: 2
+      minute: 0
+      hour: 12
+      user: root
+      job: "/usr/sbin/aide --check"
+      cron_file: ansible_aide_check
