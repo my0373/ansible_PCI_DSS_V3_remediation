@@ -1,0 +1,14 @@
+---
+  - name: Set pam hashing algorith,
+    template:
+      src: set_pam_hash.sh.j2
+      dest: /tmp/set_pam_hash.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the set pam hashing alogrithm script
+    command: /tmp/set_pam_hash.sh
+    become: yes
+
