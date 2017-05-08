@@ -1,0 +1,45 @@
+---
+## So normally I would set this to
+## - hosts: all
+## However I only want to run this on this foreman group
+- hosts:  foreman_hostgroup_rhel7
+  remote_user: ansible
+  gather_facts: no
+  become: yes
+  become_user: root
+  become_method: sudo
+
+
+  tasks:
+
+  ## Ping all the effected servers. This is usefule for checking
+  ## the scope of the machines it will be run against.
+    - name: Update the kernel packages
+      yum:
+        name: 'kernel*'
+        state: latest
+
+
+    - name: Checking if we need a reboot
+      # NOTE: this string check is wrong so always comes back as "yes"
+      shell: if [ $(rpm -q kernel | sort -Vr | head -n 1) != kernel-$(uname -r) ]; then echo "yes"; fi
+      register: reboot
+      ignore_errors: true
+
+    - name: Reboot required
+      command: shutdown -r now "Ansible kernel update applied"
+      async: 1
+      poll: 0
+      ignore_errors: true
+      when: reboot.changed
+
+    - name: Waiting for server to come back up
+      local_action:
+        wait_for
+        host="{{ inventory_hostname }}"
+        port=22
+        delay=10
+        timeout=60
+      become: false
+      when: reboot.changed
+

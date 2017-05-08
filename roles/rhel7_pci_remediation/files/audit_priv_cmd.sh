@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Perform the remediation for both possible tools: 'auditctl' and 'augenrules'
 
 function perform_audit_rules_privileged_commands_remediation {
