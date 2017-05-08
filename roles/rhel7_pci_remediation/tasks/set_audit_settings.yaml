@@ -77,3 +77,46 @@
   - name: Execute the Detect localtime tamper policies script
     command: /tmp/set_auditd_tamper_stod.sh.j2
     become: yes
+
+  - name: Configure file policies
+    copy:
+      src: "{{ item }}"
+      dest: /tmp/set_auditd_tamper_stod.sh.j2
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    with_items:
+      - lock_chmod.sh
+      - lock_chown.sh
+      - lock_fchmod.sh
+      - lock_fchmodat.sh
+      - lock_fchown.sh
+      - lock_fchownat.sh
+      - lock_fremovexttr.sh
+      - lock_fsetxattr.sh
+      - lock_lchown.sh
+      - lock_lremovexttr.sh
+      - lock_lsetxattr.sh
+      - lock_removexttr.sh
+      - lock_setxattr.sh
+    become: yes
+
+  - name: Execute the Detect localtime tamper policies script
+    command: "/tmp/{{ item }}"
+    with_items:
+      - lock_chmod.sh
+      - lock_chown.sh
+      - lock_fchmod.sh
+      - lock_fchmodat.sh
+      - lock_fchown.sh
+      - lock_fchownat.sh
+      - lock_fremovexttr.sh
+      - lock_fsetxattr.sh
+      - lock_lchown.sh
+      - lock_lremovexttr.sh
+      - lock_lsetxattr.sh
+      - lock_removexttr.sh
+      - lock_setxattr.sh
+    become: yes
+
+
