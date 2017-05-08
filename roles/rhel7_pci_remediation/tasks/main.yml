@@ -3,3 +3,10 @@
     include: install_aide.yaml
     include: build_aide_db.yaml
     include: configure_aide.yaml
+
+  - name: "Secure and user and password policies"
+    #include: no_empty_passwords.yaml
+    include: password_set_max_age.yaml
+    #include: set_password_expiraion.yaml
+    #include: set_password_complexity.yaml
+    #include: set_password_length.yaml

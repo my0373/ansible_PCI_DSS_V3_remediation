@@ -4,6 +4,8 @@
 
 # Unfortunately, this particular OpenSCAP check looks for a specific line in /etc/crontab.
 # Profile needs to be fixed. Will be raising a ticket.
+
+# This is NOT THE RIGHT WAY TO ADD CRONTAB ENTRIES!
   - name: Install the AIDE crontab entry
     script: /usr/bin/echo '05 4 * * * root /usr/sbin/aide --check' >> /etc/crontab
     become: yes
