@@ -1,13 +1,15 @@
 ---
+## So normally I would set this to
+## - hosts: all
+## However I only want to run this on this foreman group
 - hosts:  foreman_hostgroup_rhel7
-  remote_user: ansible
-  gather_facts: yes
-
+  remote_user: root
+  gather_facts: no
 
   tasks:
     - name: Open HTTP firewall port 80
-    firewalld:
-      service: http
-      permanent: true
-      state: enabled
-      immediate: yes
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
