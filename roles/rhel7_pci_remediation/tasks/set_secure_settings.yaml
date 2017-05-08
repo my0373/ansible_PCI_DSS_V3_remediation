@@ -50,3 +50,16 @@
   - name: Execute the set smartcard login script
     command: /tmp/set_card_logins.sh
     become: yes
+
+  - name: Set log permissions
+    template:
+      src: set_log_permissions.sh.j2
+      dest: /tmp/set_log_permissions.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the set log permissions script
+    command: /tmp/set_log_permissions.sh
+    become: yes
