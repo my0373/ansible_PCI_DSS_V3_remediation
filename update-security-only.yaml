@@ -3,7 +3,7 @@
 ## - hosts: all
 ## However I only want to run this on this foreman group
 - hosts:  foreman_hostgroup_rhel7
-  remote_user: root
+  remote_user: ansible
   gather_facts: no
 
   tasks:
