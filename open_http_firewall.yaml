@@ -9,8 +9,9 @@
   become_method: sudo
 
   tasks:
-  firewalld:
-    service: http
-    permanent: true
-    state: enabled
-    immediate: yes
+    name: Open HTTP firewall port 80
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+      immediate: yes
