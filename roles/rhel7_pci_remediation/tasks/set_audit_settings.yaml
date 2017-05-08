@@ -21,6 +21,15 @@
       mode: "u=rwx,g=r,o=r"
     become: yes
 
+  - name: set NTP servers
+    copy:
+      src: ntp.conf
+      dest: /etc/ntp.conf
+      owner: root
+      group: root
+      mode: "u=rw,g=r,o=r"
+    become: yes
+
   - name: Execute the Detect adjtimex tamper policies script
     command: /tmp/set_auditd_tamper_adjtimex.sh.j2
     become: yes
