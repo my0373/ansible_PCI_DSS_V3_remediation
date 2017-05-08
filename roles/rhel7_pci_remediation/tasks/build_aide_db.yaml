@@ -2,6 +2,6 @@
 # Build the AIDE database
 ## TODO: Hack for demo purposes. This regenerates the db each and evey time.
 ## I'll come back and fix this in the next proper commit.
-  - name: Install the AIDE package
+  - name: Build the AIDE database
     command: /usr/sbin/aide --init
     become: True
