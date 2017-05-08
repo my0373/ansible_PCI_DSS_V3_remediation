@@ -1,9 +1,4 @@
 
-Filepath	Pattern	Instance
-/etc/audit/audit.rules	^\-w[\s]+/etc/sudoers[\s]+\-p[\s]+\b([rx]*w[rx]*a[rx]*|[rx]*a[rx]*w[rx]*)\b[\s]+\-k[\s]+[-\w]+[\s]*$	1
-Remediation script:
-
-
 # Perform the remediation for both possible tools: 'auditctl' and 'augenrules'
 
 function fix_audit_watch_rule {
