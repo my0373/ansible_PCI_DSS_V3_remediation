@@ -21,7 +21,7 @@
       mode: "u=rwx,g=r,o=r"
 
   - name: Execute the Detect adjtimex tamper policies script
-    command: /tmp/set_auditd_tamper_adjtimex.sh
+    command: /tmp/set_auditd_tamper_adjtimex.sh.j2
     become: yes
 
   - name: Detect csettime tamper policies
