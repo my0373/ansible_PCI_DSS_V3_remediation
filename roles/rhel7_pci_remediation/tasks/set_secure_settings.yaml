@@ -27,7 +27,7 @@
 
   - name: Set libuser hashing algorith,
     template:
-      src: set_libusr_hash.sh.j2
+      src: set_libusr_hash.j2
       dest: /tmp/set_libusr_hash.sh
       owner: root
       group: wheel
