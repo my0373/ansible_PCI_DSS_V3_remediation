@@ -1,0 +1,5 @@
+---
+  - name: "Setup and configure AIDE"
+    include: install_aide.yaml
+    #include: build_aide_db.yaml
+    #include: configure_aide.yaml
