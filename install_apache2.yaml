@@ -1,0 +1,8 @@
+---
+- name: Setup Apache
+  hosts:  foreman_hostgroup_rhel7
+  roles:
+    - { role: geerlingguy.apache }
+
+
+
