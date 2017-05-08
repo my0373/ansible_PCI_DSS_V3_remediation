@@ -33,12 +33,8 @@
       ignore_errors: true
       when: reboot.changed
 
-    - name: Waiting for server to come back up
-      local_action:
-        wait_for host="{{ inventory_hostname }}"
-        port=22
-        delay=60
-        timeout=60
-      become: false
-      when: reboot.changed
+
+    - name: Task3 waiting for server to come back after 10.04 to 12.04
+      local_action: wait_for host={{ ansible_ssh_host }} state=started
+
 
