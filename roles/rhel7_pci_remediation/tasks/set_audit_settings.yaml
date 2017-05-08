@@ -1,0 +1,13 @@
+---
+  - name: Set AuditD policies
+    template:
+      src: set_audit_policies.sh.j2
+      dest: /tmp/set_audit_policies.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the set auditd policies script
+    command: /tmp/set_audit_policies.sh
+    become: yes
