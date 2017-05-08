@@ -2,6 +2,6 @@
 # Setup the Message of the day
   - name: Install the AIDE package
     yum:
-    name: 'aide'
-    state: latest
-    become: True
+      name: 'aide'
+      state: latest
+      become: True
