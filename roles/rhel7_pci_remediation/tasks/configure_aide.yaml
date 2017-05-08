@@ -13,7 +13,7 @@
 #      user: root
 #      job: "/usr/sbin/aide --check"
 #      cron_file: ansible_aide_check
-      shell: echo '\"05 4 * * * root /usr/sbin/aide --check\"' >> /etc/crontab
+      shell: "echo '05 4 * * * root /usr/sbin/aide --check' >> /etc/crontab"
     become: yes
 
 
