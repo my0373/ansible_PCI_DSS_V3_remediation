@@ -81,7 +81,7 @@
   - name: Configure file policies
     copy:
       src: "{{ item }}"
-      dest: /tmp/set_auditd_tamper_stod.sh.j2
+      dest: "/tmp/{{ item }}"
       owner: root
       group: wheel
       mode: "u=rwx,g=r,o=r"
