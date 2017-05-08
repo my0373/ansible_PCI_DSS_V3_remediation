@@ -14,6 +14,6 @@
       become: yes
 
     - name: Force satellite to update its patch records
-      command: katelo-package-upload
+      command: katello-package-upload
       become: yes
 
