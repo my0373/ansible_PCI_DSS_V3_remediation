@@ -11,7 +11,9 @@
   ## Update security patches only
     - name: Update security patches only
       command: yum update-minimal --security -y
+      become: yes
 
     - name: Force satellite to update its patch records
       command: katelo-package-upload
+      become: yes
 
