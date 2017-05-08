@@ -38,7 +38,7 @@
     command: /tmp/set_auditd_tamper_csettime.sh
     become: yes
 
- - name: Detect csettime tamper policies
+ - name: Detect localtime tamper policies
     template:
       src: set_auditd_tamper_localtime.sh.j2
       dest: /tmp/set_auditd_tamper_localtime.sh
@@ -49,4 +49,30 @@
 
   - name: Execute the Detect localtime tamper policies script
     command: /tmp/set_auditd_tamper_localtime.sh
+    become: yes
+
+ - name: Detect stime tamper policies
+    template:
+      src: set_auditd_tamper_stime.sh.j2
+      dest: /tmp/set_auditd_tamper_stime.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the Detect localtime tamper policies script
+    command: /tmp/set_auditd_tamper_stime.sh
+    become: yes
+
+ - name: Detect setimeofday tamper policies
+    template:
+      src: set_auditd_tamper_stod.sh.j2
+      dest: /tmp/set_auditd_tamper_stod.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the Detect localtime tamper policies script
+    command: /tmp/set_auditd_tamper_stod.sh
     become: yes
