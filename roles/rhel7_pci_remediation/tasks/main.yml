@@ -28,4 +28,4 @@
     include: install_other_secure_packages.yaml
 
   - name: "Configure audit settings"
-    include: set_autid_settings.yaml
+    include: set_auditd_settings.yaml
