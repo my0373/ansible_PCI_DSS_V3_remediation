@@ -16,5 +16,6 @@
 
   - name: "Set passwords to expire"
     include: password_set_expiration.yaml
-    #include: set_password_complexity.yaml
+  - name: "Set password complexity"
+    include: set_password_complexity.yaml
     #include: set_password_length.yaml
