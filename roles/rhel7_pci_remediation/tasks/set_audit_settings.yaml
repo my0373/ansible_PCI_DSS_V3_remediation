@@ -1,13 +1,52 @@
 ---
   - name: Set AuditD policies
     template:
-      src: set_audit_policies.sh.j2
-      dest: /tmp/set_audit_policies.sh
+      src: set_auditd_policies.sh.j2
+      dest: /tmp/set_auditd_policies.sh
       owner: root
       group: wheel
       mode: "u=rwx,g=r,o=r"
     become: yes
 
   - name: Execute the set auditd policies script
-    command: /tmp/set_audit_policies.sh
+    command: /tmp/set_auditd_policies.sh
+    become: yes
+
+  - name: Detect adjtimex tamper policies
+    template:
+      src: set_auditd_tamper_adjtimex.sh.j2
+      dest: /tmp/set_auditd_tamper_adjtimex.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the Detect adjtimex tamper policies script
+    command: /tmp/set_auditd_tamper_adjtimex.sh
+    become: yes
+
+ - name: Detect csettime tamper policies
+    template:
+      src: set_auditd_tamper_csettime.sh.j2
+      dest: /tmp/set_auditd_tamper_csettime.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the Detect adjtimes tamper policies script
+    command: /tmp/set_auditd_tamper_csettime.sh
+    become: yes
+
+ - name: Detect csettime tamper policies
+    template:
+      src: set_auditd_tamper_localtime.sh.j2
+      dest: /tmp/set_auditd_tamper_localtime.sh
+      owner: root
+      group: wheel
+      mode: "u=rwx,g=r,o=r"
+    become: yes
+
+  - name: Execute the Detect localtime tamper policies script
+    command: /tmp/set_auditd_tamper_localtime.sh
     become: yes
