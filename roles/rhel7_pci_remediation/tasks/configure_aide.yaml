@@ -9,4 +9,4 @@
       hour: 12
       user: root
       job: "/usr/sbin/aide --check"
-      cron_file: ansible_aide_check
+#      cron_file: ansible_aide_check
