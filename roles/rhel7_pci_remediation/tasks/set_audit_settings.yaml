@@ -25,7 +25,7 @@
     command: /tmp/set_auditd_tamper_adjtimex.sh
     become: yes
 
- - name: Detect csettime tamper policies
+  - name: Detect csettime tamper policies
     template:
       src: set_auditd_tamper_csettime.sh.j2
       dest: /tmp/set_auditd_tamper_csettime.sh
@@ -38,7 +38,7 @@
     command: /tmp/set_auditd_tamper_csettime.sh
     become: yes
 
- - name: Detect localtime tamper policies
+  - name: Detect localtime tamper policies
     template:
       src: set_auditd_tamper_localtime.sh.j2
       dest: /tmp/set_auditd_tamper_localtime.sh
@@ -51,7 +51,7 @@
     command: /tmp/set_auditd_tamper_localtime.sh
     become: yes
 
- - name: Detect stime tamper policies
+  - name: Detect stime tamper policies
     template:
       src: set_auditd_tamper_stime.sh.j2
       dest: /tmp/set_auditd_tamper_stime.sh
@@ -64,7 +64,7 @@
     command: /tmp/set_auditd_tamper_stime.sh
     become: yes
 
- - name: Detect setimeofday tamper policies
+  - name: Detect setimeofday tamper policies
     template:
       src: set_auditd_tamper_stod.sh.j2
       dest: /tmp/set_auditd_tamper_stod.sh
