@@ -38,7 +38,7 @@
         wait_for
         host="{{ inventory_hostname }}"
         port=22
-        delay=10
+        delay=60
         timeout=60
       become: false
       when: reboot.changed
