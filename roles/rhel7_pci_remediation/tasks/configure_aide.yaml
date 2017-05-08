@@ -5,7 +5,7 @@
 # Unfortunately, this particular OpenSCAP check looks for a specific line in /etc/crontab.
 # Profile needs to be fixed. Will be raising a ticket.
   - name: Install the AIDE crontab entry
-    script: echo '05 4 * * * root /usr/sbin/aide --check' >> /etc/crontab
+    script: /usr/bin/echo '05 4 * * * root /usr/sbin/aide --check' >> /etc/crontab
     become: yes
     #    cron:
 #      name: yum autoupdate
