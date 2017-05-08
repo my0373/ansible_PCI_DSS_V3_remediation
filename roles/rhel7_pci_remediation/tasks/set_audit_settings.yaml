@@ -86,6 +86,17 @@
       group: wheel
       mode: "u=rwx,g=r,o=r"
     with_items:
+      - audit_delete_events.sh
+      - audit_ext_media.sh
+      - audit_kernel_events.sh
+      - audit_login_logout.sh
+      - audit_mac.sh
+      - audit_netmod.sh
+      - audit_priv_cmd.sh
+      - audit_session.sh
+      - audit_sysadmin_events.sh
+      - audit_usermod.sh
+      - autidt_file_access.sh
       - lock_chmod.sh
       - lock_chown.sh
       - lock_fchmod.sh
@@ -99,11 +110,25 @@
       - lock_lsetxattr.sh
       - lock_removexttr.sh
       - lock_setxattr.sh
+      - make_auditd_immutable.sh
+      - set_extra_ntps_servers.sh
+      - set_ssh_idle.sh
     become: yes
 
   - name: Execute the Detect localtime tamper policies script
     command: "/tmp/{{ item }}"
     with_items:
+      - audit_delete_events.sh
+      - audit_ext_media.sh
+      - audit_kernel_events.sh
+      - audit_login_logout.sh
+      - audit_mac.sh
+      - audit_netmod.sh
+      - audit_priv_cmd.sh
+      - audit_session.sh
+      - audit_sysadmin_events.sh
+      - audit_usermod.sh
+      - autidt_file_access.sh
       - lock_chmod.sh
       - lock_chown.sh
       - lock_fchmod.sh
@@ -117,6 +142,9 @@
       - lock_lsetxattr.sh
       - lock_removexttr.sh
       - lock_setxattr.sh
+      - make_auditd_immutable.sh
+      - set_extra_ntps_servers.sh
+      - set_ssh_idle.sh
     become: yes
 
 
