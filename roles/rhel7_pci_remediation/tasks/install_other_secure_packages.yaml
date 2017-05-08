@@ -1,0 +1,7 @@
+---
+# Install the libreswan rpm
+  - name: Install the libreswan package
+    yum:
+      name: 'libreswan'
+      state: latest
+    become: True

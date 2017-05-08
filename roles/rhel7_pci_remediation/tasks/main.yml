@@ -21,5 +21,8 @@
     include: set_password_complexity.yaml
     #include: set_password_length.yaml
 
-  - name: Harden default OS settings"
+  - name: "Harden default OS settings"
     include: set_secure_settings.yaml
+
+  - name: "Install security related packages"
+    include: install_other_secure_packages.yaml
