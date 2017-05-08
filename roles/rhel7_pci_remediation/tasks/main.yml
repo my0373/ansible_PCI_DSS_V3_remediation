@@ -4,11 +4,17 @@
 
   - name: "Build AIDE database"
     include: build_aide_db.yaml
+
+  - name: "Configure AIDE"
     include: configure_aide.yaml
 
-  - name: "Secure and user and password policies"
+  - name: "Disable empty passwords"
     include: no_empty_passwords.yaml
+
+  - name: "Secure aged passwords"
     include: password_set_max_age.yaml
+
+  - name: "Set passwords to expire"
     include: password_set_expiration.yaml
     #include: set_password_complexity.yaml
     #include: set_password_length.yaml
