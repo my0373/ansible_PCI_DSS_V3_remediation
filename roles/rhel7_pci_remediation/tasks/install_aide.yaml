@@ -4,4 +4,4 @@
     yum:
       name: 'aide'
       state: latest
-      become: True
+    become: True
