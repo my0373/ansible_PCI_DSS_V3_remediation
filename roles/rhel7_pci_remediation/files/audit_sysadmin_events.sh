@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Perform the remediation for both possible tools: 'auditctl' and 'augenrules'
 
