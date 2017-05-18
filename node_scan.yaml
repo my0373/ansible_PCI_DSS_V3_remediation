@@ -1,6 +1,6 @@
 ---
 - name: Attempt to run the OpenSCAP scan against the host
-  hosts:  foreman_hostgroup_rhel7
+  hosts:  all
   roles:
     - { role: node_scan }
 

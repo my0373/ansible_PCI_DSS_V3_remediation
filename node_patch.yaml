@@ -1,6 +1,6 @@
 ---
 - name: Attempt to patch the target syste,
-  hosts:  foreman_hostgroup_rhel7
+  hosts:  all
   roles:
     - { role: node_patch }
 

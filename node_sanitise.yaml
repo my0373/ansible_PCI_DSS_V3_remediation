@@ -1,6 +1,6 @@
 ---
 - name: Deploy the application on the nodes.
-  hosts:  foreman_hostgroup_rhel7
+  hosts:  all
   roles:
     - { role: node_sanitise }
 

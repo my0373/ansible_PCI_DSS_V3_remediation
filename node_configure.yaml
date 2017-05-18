@@ -1,6 +1,6 @@
 ---
 - name: Configure the target node into a known state.
-  hosts:  foreman_hostgroup_rhel7
+  hosts:  all
   roles:
     - { role: node_configure }
 
