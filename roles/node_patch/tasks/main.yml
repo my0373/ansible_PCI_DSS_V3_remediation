@@ -1,2 +1,4 @@
 ---
-# tasks file for node_patch
+# tasks file for node_deploy
+  - name: "Patch the kernel and reboot if required."
+    include: update_kernel.yaml
