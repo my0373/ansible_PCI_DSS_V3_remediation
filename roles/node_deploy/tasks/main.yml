@@ -3,7 +3,5 @@
   - name: "Open the firewall ports for the specific application deployment"
     include: open_http_firewall.yaml
 
----
-# tasks file for node_deploy
   - name: "Install the webserver"
     include: install_apache.yaml
