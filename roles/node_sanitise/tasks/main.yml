@@ -1,6 +1,6 @@
 ---
-  - name: "Ensure the server is contactable."
-    include: install_aide.yaml
+  - name: "Ensure the server is contactable as the root user."
+    include: ping_as_root_user.yaml
 
   - name: "Create the Ansible group."
     include: create_ansible_group.yaml

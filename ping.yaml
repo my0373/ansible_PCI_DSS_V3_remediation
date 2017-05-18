@@ -8,9 +8,6 @@
 
   tasks:
 
-  ## Ping all the effected servers. This is usefule for checking
-  ## the scope of the machines it will be run against.
-    - name: Ping the servers
-      ping:
+
 
 

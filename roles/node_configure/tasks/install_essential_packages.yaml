@@ -10,4 +10,5 @@
       - tree
       - vim
       - git
+      - rubygem-foreman_scap_client
     become: yes

@@ -12,7 +12,7 @@
 
   tasks:
 
-  ## Ping all the effected servers. This is usefule for checking
+  ## Ping all the effected servers. This is useful for checking
   ## the scope of the machines it will be run against.
     - name: Run OpenSCAP report
       command: /usr/bin/foreman_scap_client 1

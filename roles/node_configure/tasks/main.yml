@@ -5,3 +5,6 @@
   - name: "Install the base packages all machines require."
     include: install_essential_packages.yaml
 
+  - name: "Install and update the OpenSCAP client."
+    include: update_openscp_clients.yaml
+
