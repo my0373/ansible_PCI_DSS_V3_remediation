@@ -1,0 +1,7 @@
+---
+  - name: "Generate and deploy the MOTD"
+    include: motd.yaml
+
+  - name: "Install the base packages all machines require."
+    include: install_essential_packages.yaml
+

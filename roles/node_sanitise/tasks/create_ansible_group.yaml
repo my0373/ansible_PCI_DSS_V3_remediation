@@ -1,0 +1,8 @@
+---
+  - name: Create the Ansible group
+    group:
+      name: ansible
+      state: present
+      gid: 1337
+    remote_user: root
+    gather_facts: no

@@ -1,0 +1,8 @@
+---
+  - name: Add sudoers users to wheel group
+    user:
+      name: "ansible"
+      groups: wheel
+      append: yes
+    remote_user: root
+    gather_facts: no

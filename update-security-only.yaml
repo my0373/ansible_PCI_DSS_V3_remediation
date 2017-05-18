@@ -8,7 +8,8 @@
 
   tasks:
 
-  ## Update security patches only
+  ## Update security patches only. This works for RHEL7, RHEL6 requires an extra package to be installed.
+  ## It's on the TODO:Add switch for RHEL6 that installs extra package.
     - name: Update security patches only
       command: yum update-minimal --security -y
       become: yes

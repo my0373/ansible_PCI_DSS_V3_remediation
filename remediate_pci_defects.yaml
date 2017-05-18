@@ -1,8 +1,0 @@
----
-- name: Start PCI DSS Remediation
-  hosts:  foreman_hostgroup_rhel7
-  roles:
-    - { role: rhel7_pci_remediation }
-
-
-

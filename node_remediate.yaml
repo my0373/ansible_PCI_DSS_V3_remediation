@@ -1,0 +1,8 @@
+---
+- name: Make the node compliant with the PCI-DSS v3 standard.
+  hosts:  foreman_hostgroup_rhel7
+  roles:
+    - { role: rhel7_pci_remediation }
+
+
+

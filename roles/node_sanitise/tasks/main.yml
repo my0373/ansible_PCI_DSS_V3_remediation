@@ -1,0 +1,27 @@
+---
+  - name: "Ensure the server is contactable."
+    include: install_aide.yaml
+
+  - name: "Create the Ansible group."
+    include: create_ansible_group.yaml
+
+  - name: "Create the Ansible user."
+    include: create_ansible_user.yaml
+
+  - name: "Copy the tower SSH key for passwordless access."
+    include: install_tower_ssh_key.yaml
+
+  - name: "Configure sudo to allow members of the wheel group passwordless sudo access."
+    include: enable_ansible_sudo_access.yaml
+
+  - name: "Configure sudo to allow members of the wheel group passwordless sudo access."
+    include: add_ansible_to_wheel_group.yaml
+
+  - name: "Ensure we can log in as the Ansible user."
+    include: ping_as_ansible_user.yaml
+
+
+  ## Verify the host is contactable. We are testing we can
+  ## connect as the ansible user but use sudo.
+
+
