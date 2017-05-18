@@ -1,3 +1,0 @@
----
-  - name: "Generate a standard MOTD"
-    include: motd.yaml

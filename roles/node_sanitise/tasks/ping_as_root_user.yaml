@@ -1,0 +1,4 @@
+---
+  - name: Test the server is accessible via the root user.
+    ping:
+    remote_user: root

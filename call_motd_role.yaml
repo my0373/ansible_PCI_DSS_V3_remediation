@@ -1,8 +1,0 @@
----
-- name: Setup MOTD
-  hosts:  foreman_hostgroup_rhel7
-  roles:
-    - { role: motd }
-
-
-

@@ -1,0 +1,10 @@
+---
+  - name: Create the Ansible user and generate it's SSH key.
+    user:
+      name: ansible
+      comment: "Ansible service account"
+      uid: 1337
+      group: ansible
+      generate_ssh_key: yes
+      state: present
+    remote_user: root

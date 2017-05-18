@@ -1,0 +1,31 @@
+---
+  - name: "Update the kernel on {{ inventory_hostname }}"
+    yum:
+      name: 'kernel*'
+      state: latest
+
+
+  - name: Checking if we need a reboot
+    # NOTE: this string check is wrong so always comes back as "yes"
+    shell: if [ $(rpm -q kernel | sort -Vr | head -n 1) != kernel-$(uname -r) ]; then echo "yes"; fi
+    register: reboot
+    ignore_errors: true
+
+  - name: "rebooting server {{ inventory_hostname }}"
+    shell: sleep 2 && shutdown -r now
+    async: 1
+    poll: 0
+    become: yes
+    ignore_errors: true
+
+  - name: "Waiting for server {{ inventory_hostname }} to come back up"
+    local_action:
+      wait_for
+      host="{{ inventory_hostname }}"
+      port=22
+      delay=10
+      timeout=60
+    become: false
+    when: reboot.changed
+
+

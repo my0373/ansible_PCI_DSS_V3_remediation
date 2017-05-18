@@ -1,0 +1,5 @@
+---
+  - name: Ping the servers as the ansible user.
+    ping:
+    become: yes
+    remote_user: ansible

@@ -1,0 +1,12 @@
+---
+  - name: "Ensure we can log in as the Ansible user."
+    include: ping_as_ansible_user.yaml
+
+  - name: "Generate and deploy the MOTD"
+    include: motd.yaml
+
+  - name: "Install the base packages all machines require."
+    include: install_essential_packages.yaml
+
+
+
