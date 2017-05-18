@@ -1,2 +1,3 @@
 ---
-# handlers file for node_deploy
+  - name: restart apache
+    service: name=httpd state=restarted
