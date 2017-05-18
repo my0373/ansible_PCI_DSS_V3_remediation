@@ -17,9 +17,6 @@
   - name: "Configure sudo to allow members of the wheel group passwordless sudo access."
     include: add_ansible_to_wheel_group.yaml
 
-  - name: "Ensure we can log in as the Ansible user."
-    include: ping_as_ansible_user.yaml
-
 
   ## Verify the host is contactable. We are testing we can
   ## connect as the ansible user but use sudo.
