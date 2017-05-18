@@ -1,0 +1,6 @@
+---
+  - name: "Run OpenSCAP report on host {{ inventory_hostname }}"
+    command: /usr/bin/foreman_scap_client 1
+
+
+

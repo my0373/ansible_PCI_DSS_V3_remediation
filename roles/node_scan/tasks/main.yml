@@ -1,0 +1,3 @@
+---
+  - name: "Generate an OpenSCAP report for hosts."
+    include: run_openscap_report.yaml
