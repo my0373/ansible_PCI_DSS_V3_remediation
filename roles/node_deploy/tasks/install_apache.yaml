@@ -1,0 +1,11 @@
+---
+  ## Install essential packages
+  - name: Install webserver packages
+    yum:
+      name: "{{ item }}"
+      state: latest
+
+  ## This list is the name of the RPM's we are looking to install.
+    with_items:
+      - httpd
+    become: yes
