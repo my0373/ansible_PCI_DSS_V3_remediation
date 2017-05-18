@@ -1,11 +1,16 @@
 ---
-  ## Install essential packages
-  - name: Install webserver packages
-    yum:
-      name: "{{ item }}"
-      state: latest
+  - name: Install the httpd
+    yum: name=httpd
 
-  ## This list is the name of the RPM's we are looking to install.
-    with_items:
-      - httpd
-    become: yes
+  - name: start the httpd service
+    service: name=httpd state=started
+
+  - name: Open port 80
+    firewalld: service=http permanent=true state=enabled
+
+  - name: start the firewalld service
+    service: name=firewalld state=restarted
+
+  handlers:
+    - name: restart apache
+      service: name=httpd state=restarted

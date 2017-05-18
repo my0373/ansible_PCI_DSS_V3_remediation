@@ -1,2 +1,3 @@
 ---
-# handlers file for node_configure
+  - name: restart apache
+    service: name=httpd state=restarted

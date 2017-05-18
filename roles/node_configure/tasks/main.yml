@@ -5,6 +5,14 @@
   - name: "Generate and deploy the MOTD"
     include: motd.yaml
 
+  - name: write the apache config file
+    yum: name=httpd state=latest
+    notify:
+    - restart apache
+
   - name: "Install the base packages all machines require."
     include: install_essential_packages.yaml
+
+  - name: ensure apache is running (and enable it at boot)
+    service: name=httpd state=started enabled=yes
 
