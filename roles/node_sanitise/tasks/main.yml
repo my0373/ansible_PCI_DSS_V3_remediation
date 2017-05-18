@@ -1,4 +1,6 @@
 ---
+  gather_facts: no
+
   - name: "Ensure the server is contactable as the root user."
     include: ping_as_root_user.yaml
 
