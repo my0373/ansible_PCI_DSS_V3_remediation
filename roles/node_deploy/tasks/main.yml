@@ -5,3 +5,6 @@
 
   - name: "Install Apache"
     include: install_apache.yaml
+
+  - name: "Copy website over"
+    include: install_apache.yaml
