@@ -1,13 +1,4 @@
 ---
-## So normally I would set this to
-## - hosts: all
-## However I only want to run this on this foreman group
-- hosts:  foreman_hostgroup_rhel7
-  remote_user: ansible
-  gather_facts: no
-
-  tasks:
-
   ## Update security patches only. This works for RHEL7, RHEL6 requires an extra package to be installed.
   ## It's on the TODO:Add switch for RHEL6 that installs extra package.
     - name: Update security patches only
