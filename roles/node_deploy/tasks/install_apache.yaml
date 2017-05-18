@@ -1,5 +1,5 @@
 ---
-  - name: Install the httpd
+  - name: Install apache
     yum: name=httpd
 
   - name: start the httpd service
@@ -7,5 +7,3 @@
     notify:
     - restart apache
 
-  - name: Open port 80
-    firewalld: service=http permanent=true state=enabled
