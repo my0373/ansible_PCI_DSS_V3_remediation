@@ -8,4 +8,8 @@
   - name: "Install Apache"
     include: install_apache.yaml
 
+  - name: "Copy website over"
+    include: build_variable_page.yaml
 
+  - name: "Build Foreman Page"
+    include: build_foreman_page.yaml
