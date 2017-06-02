@@ -1,0 +1,9 @@
+---
+  - name: Build variable page
+    template:
+      src: foreman.j2
+      dest: /var/www/html/foreman.html
+      owner: root
+      group: root
+      mode: "u=rwx,g=rx,o=rx"
+    become: True
