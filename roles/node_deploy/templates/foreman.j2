@@ -16,7 +16,7 @@
         Installed Puppet version  according to foreman {{ foreman_facts.puppetversion }}
         Installed Augeas according to foreman {{ foreman_facts.augeasversion }}
         Foreman host parameters (provided via ENC {{ foreman_params }})
-        Foreman ENC data claims we were built with the {{  foreman_params.kt_activation_keys }} activation key
+        Foreman ENC data claims we were built with the "{{  foreman_params.kt_activation_keys }}" activation key
     </pre>
 
     <h1>Foreman Facts (Lots of)</h1>
@@ -24,6 +24,10 @@
         {{ foreman_facts | to_yaml }}
     </pre>
 
+    <h1>Foreman data about host {{ ansible_hostname }}</h1>
+    <pre>
+        {{ foreman | to_yaml }}
+    </pre>
 
 
 </body>
