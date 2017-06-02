@@ -11,17 +11,20 @@
 
 <body id="home">
 
-    <h1>Foreman Facts ("vars")</h1>
-    <pre>
-        {{ foreman_facts | to_yaml }}
-    </pre>
-
-    <h1>Augeus Version ("vars")</h1>
+    <h1>Cherry picked puppet and Foreman ENC data</h1>
     <pre>
         Installed Puppet version  according to foreman {{ foreman_facts.puppetversion }}
         Installed Augeas according to foreman {{ foreman_facts.augeasversion }}
         Foreman host parameters (provided via ENC {{ foreman_params }})
+        Foreman ENC data claims we were built with the {{  foreman_params.kt_activation_keys }} activation key
     </pre>
+
+    <h1>Foreman Facts (Lots of)</h1>
+    <pre>
+        {{ foreman_facts | to_yaml }}
+    </pre>
+
+
 
 </body>
 </html>
