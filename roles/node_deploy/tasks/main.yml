@@ -7,4 +7,4 @@
     include: install_apache.yaml
 
   - name: "Copy website over"
-    include: copy_static_site.yaml
+    include: build_variable_page.yaml
