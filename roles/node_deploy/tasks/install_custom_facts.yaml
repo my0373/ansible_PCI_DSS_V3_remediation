@@ -1,6 +1,6 @@
 ---
   - name: "Create custom fact directory"
-   file:
+    file:
       path: "/etc/ansible/facts.d"
       state: "directory"
   - name: "Insert custom fact file"
