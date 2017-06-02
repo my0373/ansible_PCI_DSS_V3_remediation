@@ -11,26 +11,24 @@
 
 <body id="home">
 
-	<h1>Ansible run complete</h1>
-
-Module Variables ("vars"):
---------------------------------
+    <h1>Module Variables ("vars")</h1>
+<pre>
 {{ vars | to_yaml }}
+</pre>
+<h1>Environment Variables ("environment"):</h1>
 
-Environment Variables ("environment"):
---------------------------------
 {{ environment | to_yaml }}
 
-GROUP NAMES Variables ("group_names"):
---------------------------------
+    <h1>GROUP NAMES Variables ("group_names"):</h1>
+
 {{ group_names | to_yaml }}
 
-GROUPS Variables ("groups"):
---------------------------------
+    <h1>GROUPS Variables ("groups"):</h1>
+
 {{ groups | to_yaml }}
 
-HOST Variables ("hostvars"):
---------------------------------
+    <h1>HOST Variables ("hostvars"):</h1>
+
 {{ hostvars | to_yaml }}
 
 </body>
