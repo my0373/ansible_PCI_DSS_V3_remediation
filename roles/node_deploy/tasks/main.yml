@@ -1,5 +1,7 @@
 ---
 # tasks file for node_deploy
+  - name: "Deploy custom facts"
+    include: install_custom_facts.yaml
   - name: "Open the firewall ports for the specific application deployment"
     include: open_http_firewall.yaml
 
