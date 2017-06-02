@@ -12,24 +12,32 @@
 <body id="home">
 
     <h1>Module Variables ("vars")</h1>
-<pre>
-{{ vars | to_yaml }}
-</pre>
-<h1>Environment Variables ("environment"):</h1>
+    <pre>
+        {{ vars | to_yaml }}
+    </pre>
 
-{{ environment | to_yaml }}
+    <h1>Environment Variables ("environment"):</h1>
+
+    <pre>
+        {{ environment | to_yaml }}
+    </pre>
 
     <h1>GROUP NAMES Variables ("group_names"):</h1>
 
-{{ group_names | to_yaml }}
+    <pre>
+        {{ group_names | to_yaml }}
+    </pre>
 
     <h1>GROUPS Variables ("groups"):</h1>
-
-{{ groups | to_yaml }}
+    <pre>
+        {{ groups | to_yaml }}
+    </pre>
 
     <h1>HOST Variables ("hostvars"):</h1>
 
-{{ hostvars | to_yaml }}
+    <pre>
+        {{ hostvars | to_yaml }}
+    </pre>
 
 </body>
 </html>
