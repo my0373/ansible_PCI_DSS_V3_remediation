@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "{'demo_author_name' : 'Matt York'}"
+echo '{"demo_author": "Matt York"}'
