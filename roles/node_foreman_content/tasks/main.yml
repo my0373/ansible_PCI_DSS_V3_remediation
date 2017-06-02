@@ -1,0 +1,10 @@
+---
+# tasks file for node_deploy
+  - name: "Deploy custom facts"
+    include: install_custom_facts.yaml
+
+  - name: "Copy website over"
+    include: build_variable_page.yaml
+
+  - name: "Build Foreman Page"
+    include: build_foreman_page.yaml

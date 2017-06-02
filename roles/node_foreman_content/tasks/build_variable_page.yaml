@@ -1,0 +1,10 @@
+---
+  - name: Build variable page
+    template:
+      src: dumpall.j2
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: "u=rwx,g=rx,o=rx"
+      force: yes
+    become: True

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML5 boilerplate – all you really need…</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+    <h1>Module Variables ("vars")</h1>
+    <pre>
+        {{ vars | to_yaml }}
+    </pre>
+
+    <h1>Environment Variables ("environment"):</h1>
+
+    <pre>
+        {{ environment | to_yaml }}
+    </pre>
+
+    <h1>GROUP NAMES Variables ("group_names"):</h1>
+
+    <pre>
+        {{ group_names | to_yaml }}
+    </pre>
+
+    <h1>GROUPS Variables ("groups"):</h1>
+    <pre>
+        {{ groups | to_yaml }}
+    </pre>
+
+    <h1>HOST Variables ("hostvars"):</h1>
+
+    <pre>
+        {{ hostvars | to_yaml }}
+    </pre>
+
+    <h1>Custom facts ("ansible_local"):</h1>
+
+    <pre>
+        {{ ansible_local | to_yaml }}
+    </pre>
+
+</body>
+</html>

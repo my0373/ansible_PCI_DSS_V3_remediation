@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>HTML5 boilerplate – all you really need…</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+    <h1>Cherry picked puppet and Foreman ENC data</h1>
+    <pre>
+        Installed Puppet version  according to foreman {{ foreman_facts.puppetversion }}
+        Installed Augeas according to foreman {{ foreman_facts.augeasversion }}
+        Foreman host parameters (provided via ENC {{ foreman_params }})
+        Foreman ENC data claims we were built with the "{{  foreman_params.kt_activation_keys }}" activation key
+        DMI Chassis type (dmi::chassis::type) "{{  foreman_facts['dmi::chassis::type'] }}"
+    </pre>
+
+    <h1>Foreman Facts (Lots of)</h1>
+    <pre>
+        {{ foreman_facts | to_yaml }}
+    </pre>
+
+    <h1>Foreman data about puppet host signed with certname "{{ foreman.certname }}" </h1>
+    <pre>
+        {{ foreman | to_yaml }}
+    </pre>
+
+</body>
+</html>
