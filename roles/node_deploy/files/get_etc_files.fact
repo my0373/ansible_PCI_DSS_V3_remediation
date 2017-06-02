@@ -20,4 +20,4 @@ def PathToDict(path):
         result['type'] = 'f'
     return result
 
-print json.dumps(PathToDict('/etc'))
+print json.dumps(PathToDict('/etc/ansible'))
