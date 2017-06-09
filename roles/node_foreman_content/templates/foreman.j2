@@ -22,8 +22,10 @@
 
     <h1>Foreman Facts (Lots of)</h1>
     <pre>
-        {{ foreman_facts | to_yaml }}
-    </pre>
+        {%  for ffact in foreman_facts %}
+        {{ ffact | to_yaml }}
+        {% endfor %}
+        </pre>
 
     <h1>Foreman data about puppet host signed with certname "{{ foreman.certname }}" </h1>
     <pre>
