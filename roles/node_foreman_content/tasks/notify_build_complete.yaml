@@ -8,4 +8,4 @@
       to: '{{ GMAIL_RECIPIENT }} '
       subject: Build Report for '{{ ansible_hostname }}'
       body: 'System {{ ansible_hostname }} has been successfully provisioned.'
-    become: yes
+    delegate_to: localhost
