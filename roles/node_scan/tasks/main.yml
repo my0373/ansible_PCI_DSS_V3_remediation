@@ -1,3 +1,4 @@
 ---
   - name: "Generate an OpenSCAP report for hosts."
     include_tasks: run_openscap_report.yaml
+    tags: ['run_scap_report']

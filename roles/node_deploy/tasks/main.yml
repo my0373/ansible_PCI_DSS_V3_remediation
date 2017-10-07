@@ -2,8 +2,10 @@
 # tasks file for node_deploy
   - name: "Open the firewall ports for the specific application deployment"
     include_tasks: open_http_firewall.yaml
+    tags: ['httpd_firewalld','setup']
 
   - name: "Install Apache"
     include_tasks: install_apache.yaml
+    tags: ['httpd','app_deploy','setup']
 
 

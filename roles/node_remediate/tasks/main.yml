@@ -1,31 +1,40 @@
 ---
   - name: "Setup and configure AIDE"
     include_tasks: install_aide.yaml
+    tags: ['aide','setup']
 
   - name: "Build AIDE database"
     include_tasks: build_aide_db.yaml
+    tags: ['aide','setup']
 
   - name: "Configure AIDE"
     include_tasks: configure_aide.yaml
+    tags: ['aide','setup']
 
   - name: "Disable empty passwords"
     include_tasks: no_empty_passwords.yaml
+    tags: ['passwords','disable_empty_passwords','setup']
 
   - name: "Secure aged passwords"
     include_tasks: password_set_max_age.yaml
+    tags: ['passwords','disable_old_passwords','setup']
 
   - name: "Set passwords to expire"
     include_tasks: password_set_expiration.yaml
+    tags: ['passwords','expire_old_passwords','setup']
 
   - name: "Set password complexity"
     include_tasks: set_password_complexity.yaml
-    #include_tasks: set_password_length.yaml
+    tags: ['passwords','expire_simple_passwords','setup']
 
   - name: "Harden default OS settings"
     include_tasks: set_secure_settings.yaml
+    tags: ['harden_os','setup']
 
   - name: "Install security related packages"
     include_tasks: install_other_secure_packages.yaml
+    tags: ['install_security_packages','setup']
 
   - name: "Configure audit settings"
     include_tasks: set_audit_settings.yaml
+    tags: ['configure_os_audit','setup']

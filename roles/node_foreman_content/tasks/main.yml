@@ -2,9 +2,14 @@
 # tasks file for node_deploy
   - name: "Deploy custom facts"
     include_tasks: install_custom_facts.yaml
+    tags: ['custom_facts','app_deploy','setup']
 
   - name: "Copy website over"
     include_tasks: build_variable_page.yaml
+    tags: ['site_copy','app_deploy','setup']
 
   - name: "Build Foreman Page"
     include_tasks: build_foreman_page.yaml
+    tags: ['foreman_site_build','app_deploy','setup']
+
+
