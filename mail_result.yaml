@@ -11,5 +11,6 @@
       to: '{{ GMAIL_RECIPIENT }} '
       subject: Build Report for '{{ ansible_hostname }}'
       body: 'System {{ ansible_hostname }} has been successfully provisioned.'
-      secure: always
+      secure: try
+      from: '{{ GMAIL_SENDER }}'
     delegate_to: localhost
