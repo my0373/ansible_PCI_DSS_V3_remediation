@@ -5,7 +5,7 @@
   tasks:
   - mail:
       host: smtp.gmail.com
-      port: 587
+      port: 465
       username: '{{ GMAIL_USER }}'
       password: '{{ GMAIL_PASSWORD }}'
       to: '{{ GMAIL_RECIPIENT }} '
