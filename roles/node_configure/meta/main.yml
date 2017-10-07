@@ -9,11 +9,11 @@ galaxy_info:
 
   platforms:
   - name: Centos
-     versions:
-     - 7
+    versions:
+    - 7
   - name: RedHat
-     versions:
-     - 7
+    versions:
+    - 7
 
 
   galaxy_tags: []
