@@ -1,5 +1,6 @@
----
-  - hosts: all
+- name: Attempt to mail results
+  hosts:  all
+
 # Sending an e-mail using Gmail SMTP servers
   - tasks:
     - mail:
