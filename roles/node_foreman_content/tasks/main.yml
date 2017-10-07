@@ -12,9 +12,9 @@
     include_tasks: build_foreman_page.yaml
     tags: ['foreman_site_build','app_deploy','setup']
 
-  - name: "Mail build report"
-    include_tasks: notify_build_complete.yaml
-    tags: ['foreman_site_build','app_deploy','setup','mail']
+  #- name: "Mail build report"
+  #  include_tasks: notify_build_complete.yaml
+  #  tags: ['foreman_site_build','app_deploy','setup','mail']
 
 
 

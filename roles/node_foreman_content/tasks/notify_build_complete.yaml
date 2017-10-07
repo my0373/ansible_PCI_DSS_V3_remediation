@@ -1,11 +1,2 @@
----
-# Sending an e-mail using Gmail SMTP servers
-  - mail:
-      host: smtp.gmail.com
-      port: 587
-      username: '{{ GMAIL_USER }}'
-      password: '{{ GMAIL_PASSWORD }}'
-      to: '{{ GMAIL_RECIPIENT }} '
-      subject: Build Report for '{{ ansible_hostname }}'
-      body: 'System {{ ansible_hostname }} has been successfully provisioned.'
-    delegate_to: localhost
+
+
