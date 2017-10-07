@@ -1,5 +1,4 @@
 ---
-
   - name: Open SSH firewall port 22
     firewalld:
       service: ssh

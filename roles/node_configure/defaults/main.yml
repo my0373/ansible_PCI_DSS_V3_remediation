@@ -1,2 +1,7 @@
 ---
 MOTD_IMPORTANT: "This is the default message"
+ESSENTIAL_PACKAGES:
+  - tree
+  - vim
+  - git
+  - rubygem-foreman_scap_client
