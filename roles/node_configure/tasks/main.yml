@@ -1,14 +1,14 @@
 ---
   - name: "Ensure we can log in as the Ansible user."
-    include: ping_as_ansible_user.yaml
+    include_tasks: ping_as_ansible_user.yaml
     tags: ['ping']
 
   - name: "Generate and deploy the MOTD"
-    include: motd.yaml
+    include_tasks: motd.yaml
     tags: ['motd']
 
   - name: "Install the base packages all machines require."
-    include: install_essential_packages.yaml
+    include_tasks: install_essential_packages.yaml
 
 
   - name: start the firewalld service
@@ -17,4 +17,4 @@
     - restart firewalld
 
   - name: "Open the SSH port"
-    include: open_ssh_firewall.yaml
+    include_tasks: open_ssh_firewall.yaml
