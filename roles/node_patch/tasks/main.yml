@@ -1,8 +1,8 @@
 ---
 # tasks file for node_deploy
   - name: "Patch the kernel and reboot if required."
-    include_tasks: update_kernel.yaml
-    tags: ['update_kernel','setup']
+    include_tasks: kernel_update_and_reboot.yml
+    tags: ['update_kernel_and_reboot','setup']
 
   - name: "Patch minimal security patches."
     include_tasks: update-security-only.yaml

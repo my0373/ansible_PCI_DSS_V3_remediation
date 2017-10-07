@@ -1,0 +1,54 @@
+---
+  ## Ideally I would like to use the tracer package to determine which running
+  ## processes need to be restarted. Unfortunately it's not in the RHEL standard
+  ## repo, so this will have to do for now.
+
+  ## Attempt to update the kernel
+  - name: "Update the kernel on {{ inventory_hostname }}"
+    yum:
+      name: 'kernel*'
+      state: latest
+    become: yes
+
+  ## Get the installed kernel version
+  - shell: /usr/bin/rpm -q kernel | awk -F "kernel-" '{ print $2 }' | tail -1
+    register: INSTALLED_KERNEL
+    become: yes
+
+  ## Get the version of the running kernel
+  - shell: /usr/bin/uname -r
+    register: RUNNING_KERNEL
+    become: yes
+
+  ## Set the reboot flag if the versions are different.
+  - name: Checking if we need a reboot
+    shell: echo "yes"
+    register: reboot
+    ignore_errors: true
+    become: yes
+    when: INSTALLED_KERNEL.stdout != RUNNING_KERNEL.stdout
+
+
+  ## Reboot the host.
+  - name: "rebooting server {{ inventory_hostname }}"
+    shell: sleep 2 && shutdown -r now
+    async: 1
+    poll: 0
+    become: yes
+    ignore_errors: true
+    when: reboot.changed
+
+
+
+  ## Wait for the server to come back up.
+  - name: "Waiting for server {{ inventory_hostname }} to come back up"
+    local_action:
+      wait_for
+      host="{{ inventory_hostname }}"
+      port=22
+      delay=10
+      timeout=60
+    become: false
+    when: reboot.changed
+
+
