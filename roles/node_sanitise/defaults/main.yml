@@ -1,2 +1,3 @@
 ---
 # defaults file for node_sanitise
+ROOT_USER: "root"

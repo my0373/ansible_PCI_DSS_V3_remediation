@@ -4,4 +4,4 @@
       name: "ansible"
       groups: wheel
       append: yes
-    remote_user: root
+    remote_user: "{{ ROOT_USER }}"
