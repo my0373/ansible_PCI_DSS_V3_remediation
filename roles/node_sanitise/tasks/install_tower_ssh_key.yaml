@@ -4,5 +4,5 @@
       user: ansible
       state: present
       ## Yes, it's an embedded key. It's not in use in any real systems anywhere.
-      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCytCeOZtwKbmsz+VU1yTlUPPwunVpXPE/9CKpiUVB7aPnurh8AtZoY7DCAuTMI2MhFbqlFgAHB00jhJ///uZW7D4S/7KBmLJBltr61jrVkcakZti3nz+g3R2F4ux6DeNMiTAInpLp5YwXEeBhArkULvZLPcmakOS3LQpL47xsAoiwkXRjr+19enck+ooniLPtJLC4u7bjqZQ47j7+6P6dEIJRg3yZ4RcNVjrEMm7qNTsDqNbk7d6qsA1stHl+5v+B+mCz3hY6HVlALUuhPzKTahXdlUhmo40B0H5PkU0fnbvQjdTiQt7+VogLHinXIFau4tMjx/n3AS29LKtie5XSP"
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCx8jS2TnhlZ7SnZ4CAUp2KHJ3wtgEPVWJ9IcqnZFuwBAVK73QnXdH5LwqSNUm2UWpoQWnRax7EQdJDTEz1BNFTJ9NuN0xq1PsZeoF6/0Ly432FDD1+2BUjhX22LvzaYh6KOSistatUBokVVLVvdRR3r45wsMLoZ6TfhNp0DL/g1K7J6GUmbgidXLORYI+ZtZCIab35g5is0AyYnhRo3P3xvlk1VOxVxOeAdPzZvTUr89pspXCHinlyxoTVcBUzeckuhIpu74+jjQ+PJhMnvtAuzkpqiEghhKUQPfF7fUL5YeH2Zv5iEb3W+MRJfWBBI32r4X0FrZZlAvCWHZj9gRF"
     remote_user: "{{ ROOT_USER }}"
