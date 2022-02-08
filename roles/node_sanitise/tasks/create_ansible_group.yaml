@@ -4,4 +4,4 @@
       name: ansible
       state: present
       gid: 1337
-    remote_user: root
+    become: yes
