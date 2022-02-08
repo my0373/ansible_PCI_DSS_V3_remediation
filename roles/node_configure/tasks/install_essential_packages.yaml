@@ -10,5 +10,7 @@
       - tree
       - vim
       - git
-      - rubygem-foreman_scap_client
+      - openscap
+      - openscap-scanner
+      - openscap-utils
     become: yes
