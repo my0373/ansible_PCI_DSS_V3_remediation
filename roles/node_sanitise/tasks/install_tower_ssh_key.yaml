@@ -6,4 +6,4 @@
       ## Yes, it's an embedded key. It's not in use in any real systems anywhere.
       key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDpxy948IagHlJbs9SbefuvEFyr1YWHU7bpvoJcpmuWMT1Xv+oNMqoB3u676s9teW1OzGZHmRfAXD/SFn8b2gUgnWQGlNs9symTQ+6gxvcnXgcw27GFesI1lpbIhlU5zWO14vl+vUMdPbllZnU/TJZAgb9PIk++Feqg9tmd0GSXKBD8eElyTTxMlu9dWVChMTbHYDcAcUcd1nFbtxbaU6xkiusvFWZiZ4yexqRRRCLx6B4FykSECx/I4F7cCKNot+f1NO1DwL6u2yqaufwgNvAfxF3+6RuviPbGFoxN73mp4jexwfvBHvhdVgcZIVHLoahxq38ql2TrcICRDRv1qZtJ"
 
-    remote_user: root
+    become: yes

@@ -7,4 +7,4 @@
       group: ansible
       generate_ssh_key: yes
       state: present
-    remote_user: root
+    become: yes
