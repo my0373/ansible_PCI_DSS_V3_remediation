@@ -8,10 +8,3 @@
   - name: "Install the base packages all machines require."
     include: install_essential_packages.yaml
 
-  - name: start the firewalld service
-    service: name=firewalld state=started enabled=yes
-    notify:
-    - restart firewalld
-
-  - name: "Open the SSH port"
-    include: open_ssh_firewall.yaml
