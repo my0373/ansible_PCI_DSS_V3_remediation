@@ -1,9 +1,0 @@
----
-
-  - name: Open SSH firewall port 22
-    firewalld:
-      service: ssh
-      permanent: true
-      state: enabled
-      immediate: yes
-    become: yes
