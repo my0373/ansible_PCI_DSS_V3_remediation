@@ -5,7 +5,3 @@
       command: yum update-minimal --security -y
       become: yes
 
-    - name: Force satellite to update its patch records
-      command: katello-package-upload
-      become: yes
-
